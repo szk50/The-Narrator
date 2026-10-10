@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Nunito', sans-serif;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            scroll-behavior: smooth;
+            max-width: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-attachment: scroll;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        #rainbow {
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        }
+
+        #lessons #rainbow,
+        #contacts #rainbow {
+            margin-top: 60px;
+            margin-bottom: 30px;
+            margin-left: 2.5%;
+            width: 95%;
+        }
+
+        nav {
+            background-color: #1B2A5E;
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbrand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        #navlogo {
+            width: 70px;
+            height: 70px;
+            border-radius: 25%;
+        }
+
+        #navtitle {
+            color: #FDE97A;
+            font-weight: 900;
+            font-size: 25px;
+            text-shadow: 2px 2px 2px #766002;
+        }
+
+        .naventry {
+            color: #9bcefd;
+            font-weight: bold;
+            font-size: 25px;
+            text-decoration: none;
+        }
+
+        .naventry:hover {
+            color: #64a4fe;
+        }
+
+        #navlinks {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        #mainsec {
+            background-color: #FDE97A;
+            position: relative;
+            width: 100%;
+            padding-top: 120px;
+            padding-bottom: 40px;
+        }
+
+        .star-shape {
+            background-color: #F47C30;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        .star-topleft {
+            animation-delay: 0s;
+            width: 34px;
+            height: 34px;
+            position: absolute;
+            top: 150px;
+            left: 12%;
+        }
+
+        .star-topright {
+            animation-delay: 0.6s;
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            top: 150px;
+            right: 8%;
+        }
+
+        .star-bottomleft {
+            animation-delay: 0s;
+            width: 28px;
+            height: 28px;
+            position: absolute;
+            bottom: 65px;
+            left: 18%;
+        }
+
+        .star-bottomright {
+            animation-delay: 0.6s;
+            width: 34px;
+            height: 34px;
+            position: absolute;
+            bottom: 30px;
+            right: 18%;
+        }
+
+        .css-cloud-shape {
+            width: 115px;
+            height: 60px;
+            background-color: #bedbdd;
+            border: 2.5px solid #3B8DC9;
+            border-radius: 30px;
+            position: relative;
+            top: 180px;
+        }
+
+        .css-cloud-shape::after {
+            content: '';
+            width: 62px;
+            height: 62px;
+            background-color: #bedbdd;
+            border: 2.5px solid #3B8DC9;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+        }
+
+        .css-cloud-shape::before {
+            content: '';
+            width: 52px;
+            height: 52px;
+            background-color: #bedbdd;
+            border: 2.5px solid #3B8DC9;
+            border-radius: 50%;
+            position: absolute;
+            top: -12px;
+            right: 12px;
+        }
+
+        .cloud-left {
+            position: absolute;
+            top: 180px;
+            left: 20%;
+        }
+
+        .cloud-right {
+            position: absolute;
+            top: 180px;
+            right: 20%;
+        }
+
+        #logo {
+            animation-delay: 1.2s;
+            width: 200px;
+            height: 200px;
+            margin-top: 70px;
+            border-radius: 25%;
+            filter: drop-shadow(0px 0px 10px #978a27);
+        }
+
+        h1 {
+            padding: 10px;
+            font-size: 55px;
+            margin-top: 20px;
+            font-weight: 900;
+            color: #1B2A5E;
+            text-shadow: 2px 2px 2px #7c6603;
+        }
+
+        #headingspan {
+            color: #F47C30;
+            text-shadow: 2px 2px 2px #7c6603;
+        }
+
+        #description {
+            color: #2A3F6F;
+            font-size: 23px;
+            max-width: 750px;
+            font-weight: 640;
+            line-height: 2.0;
+            margin: 20px auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+        }
+
+        #buttons {
+            padding: 30px 30px 30px 30px;
+            margin-bottom: 55px;
+            z-index: 2;
+        }
+
+        #B1 {
+            text-decoration: none;
+            color: #FDE97A;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 800;
+            border: none;
+            margin-right: 10px;
+            border-radius: 35px;
+            background-color: #1B2A5E;
+            padding: 15px 30px 15px 30px;
+            cursor: pointer;
+        }
+
+        #B1:hover {
+            background-color: #253573;
+        }
+
+        #B2 {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 800;
+            color: white;
+            border: none;
+            margin-left: 10px;
+            border-radius: 35px;
+            background-color: #F47C30;
+            padding: 15px 30px 15px 30px;
+            cursor: pointer;
+        }
+
+        #B2:hover {
+            background-color: #f68b49;
+        }
+
+        #services {
+            width: 100%;
+            background-color: #1B2A5E;
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .yellowtitle {
+            font-size: 40px;
+            top: 10px;
+            margin-bottom: 8px;
+            color: #FDE97A;
+            font-size: 39px;
+            font-weight: 900;
+        }
+
+        #servicep {
+            color: #D6EFF8;
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .servicegrid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
+        }
+
+        .servicebox {
+            color: white;
+            font-weight: 700;
+            font-size: 19.5px;
+            text-align: center;
+            gap: 14px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 24px;
+            width: auto;
+            min-height: 90px;
+            margin: 0;
+            border-radius: 20px;
+            background-color: #27376D;
+            transition: transform 0.2s ease;
+        }
+
+        .servicebox:nth-child(1) {
+            border: 1.5px solid #FF5252;
+
+            .dot {
+                background-color: #FF5252;
+            }
+        }
+
+        .servicebox:nth-child(2) {
+            border: 1.5px solid #FF9800;
+
+            .dot {
+                background-color: #FF9800;
+            }
+        }
+
+
+        .servicebox:nth-child(3) {
+            border: 1.5px solid #FFEB3B;
+
+            .dot {
+                background-color: #FFEB3B;
+            }
+        }
+
+        .servicebox:nth-child(4) {
+            border: 1.5px solid #4CAF50;
+
+            .dot {
+                background-color: #4CAF50;
+            }
+        }
+
+        .servicebox:nth-child(5) {
+            border: 1.5px solid #42A5F5;
+
+            .dot {
+                background-color: #42A5F5;
+            }
+        }
+
+        .servicebox:nth-child(6) {
+            border: 1.5px solid #AB47BC;
+
+            .dot {
+                background-color: #AB47BC;
+            }
+        }
+
+        .servicebox:nth-child(7) {
+            border: 1.5px solid #FF5252;
+
+            .dot {
+                background-color: #FF5252;
+            }
+        }
+
+        .servicebox:nth-child(8) {
+            border: 1.5px solid #FF9800;
+
+            .dot {
+                background-color: #FF9800;
+            }
+        }
+
+        .servicebox:nth-child(9) {
+            border: 1.5px solid #FFEB3B;
+
+            .dot {
+                background-color: #FFEB3B;
+            }
+        }
+
+        .servicebox:hover {
+            transform: translateY(-4px);
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            display: inline-block;
+            align-self: center;
+            flex-shrink: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .decor {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #lessons {
+            width: 100%;
+            background-color: #FEF8D0;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .bluetitle {
+            margin-top: 70px;
+            color: #1B2A5E;
+            font-size: 39px;
+            font-weight: 900;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 50px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .lessoncard {
+            width: 100%;
+            transition: transform 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #fff;
+            border-radius: 35px;
+            box-shadow: 0 4px 20px rgba(27, 42, 94, 0.08);
+
+            ul {
+                list-style-type: none;
+            }
+        }
+
+        .lessoncard:hover {
+            transform: translateY(-4px);
+        }
+
+        .cardicon p {
+            line-height: 15px;
+            text-align: left;
+            justify-content: left;
+            margin-left: 40px;
+            font-size: 40px;
+        }
+
+        .individuallogo {
+            margin: 0px;
+            border-radius: 35px 35px 0 0;
+            background-color: #3B8DC9;
+
+            h3 {
+                margin-top: 6px;
+                margin-left: 40px;
+                text-align: left;
+                justify-content: left;
+                color: #FDE97A;
+                font-size: 26px;
+                font-weight: 900;
+                line-height: 18.4px;
+            }
+        }
+
+        .grouplogo {
+            margin: 0px;
+            border-radius: 35px 35px 0 0;
+            background-color: #4BAD51;
+
+            h3 {
+                margin-top: 6px;
+                margin-left: 40px;
+                text-align: left;
+                justify-content: left;
+                color: white;
+                font-size: 26px;
+                font-weight: 900;
+                line-height: 18.4px;
+            }
+        }
+
+        .lessoncontent {
+            padding: 20px 20px;
+            text-align: left;
+            justify-content: left;
+
+            p {
+                text-align: left;
+                font-size: 18px;
+                color: #1B2A5E;
+                font-weight: 600;
+                line-height: 1.6;
+            }
+
+            li {
+                list-style-type: none;
+                text-align: left;
+                font-size: 18px;
+                color: #1B2A5E;
+                font-weight: bold;
+                line-height: 1.6;
+
+                span {
+
+                    color: #3B8DC9;
+                    font-size: 20px;
+                    margin-right: 10px;
+
+                    &.group {
+                        color: #4BAD51;
+                    }
+                }
+            }
+        }
+
+        #referrals {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            background-color: #FDE97A;
+            padding: 50px 20px;
+            text-align: center;
+
+            description p {
+                color: #2A3F6F;
+                font-weight: 500;
+                line-height: 30.8px;
+                font-size: 18px;
+            }
+
+            p span {
+                color: red;
+                font-weight: bold;
+            }
+
+            .cardicon p {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .title {
+                color: #1B2A5E;
+                font-size: 18px;
+                font-weight: 800;
+                line-height: 26.4px;
+            }
+
+            .info {
+                border-radius: 25px 25px;
+                background-color: white;
+                box-shadow: 0 4px 20px rgba(27, 42, 94, 0.08);
+            }
+
+            .msg {
+                font-size: 26px;
+                font-weight: 900;
+                line-height: 28.4px;
+                color: red;
+            }
+
+            .org {
+                color: #F47C30;
+            }
+
+            #grid {
+                width: 50%;
+                height: 50%;
+            }
+        }
+
+        #contacts {
+            width: 100%;
+            background-color: #1B2A5E;
+            padding: 60px 20px;
+            text-align: center;
+
+            h2 {
+                padding-top: 30px;
+            }
+
+            a {
+                text-decoration: none;
+                color: #D6EFF8;
+            }
+
+            .cardicon p {
+                margin-left: 0;
+                text-align: center;
+                justify-content: center;
+            }
+
+            #grid {
+                /*grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                max-width: 700px;
+                margin: 20px auto;
+                gap: 30px;
+                padding: 0 20px; */
+
+                display: flex;
+                justify-content: center;
+                align-items: stretch;
+                flex-wrap: wrap;
+                gap: 24px;
+                width: auto;
+                max-width: 1000px;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+
+            .contactbox {
+                padding: 20px;
+                text-align: center;
+                background-color: #FFFFFF14;
+                border: #FDE97A80 2px solid;
+                border-radius: 25px;
+                margin: 0;
+                width: auto;
+            }
+
+            .medium {
+                color: #FDE97A;
+                font-size: 20px;
+                font-weight: 800;
+            }
+        }
+
+        .info .detail{
+            color: #1B2A5E;
+        }
+
+        .detail {
+            color: #D6eFF8;
+            line-height: 20.4px;
+            font-size: 15px;
+            font-weight: 400;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            background-color: #111C3E;
+            padding: 22px 24px;
+
+            img {
+                height: 50px;
+                width: 50px;
+                border-radius: 8px;
+            }
+
+            #footnote {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .branding {
+                align-items: center;
+                display: flex;
+                gap: 15px;
+            }
+
+            .foottitle {
+                font-size: 18px;
+                font-weight: 800;
+                color: #FDE97A;
+                text-shadow: 2px 2px 2px #766002;
+            }
+
+            .detail {
+                font-size: 15px;
+                font-weight: 400;
+            }
+
+            span {
+                text-align: right;
+
+            }
+        }
+    </style>
+    <title>The Narrator Hub</title>
+</head>
+
+<body>
+    <header>
+        <div id="rainbow"></div>
+        <nav>
+            <div class="navbrand">
+                <img src="logo.jpg" alt="logo" id="navlogo">
+                <span id="navtitle">The Narrator</span>
+            </div>
+            <div id="navlinks">
+                <a class="naventry" href="#services">Services</a>
+                <a class="naventry" href="#lessons">Lessons</a>
+                <a class="naventry" href="#referrals">Referral</a>
+                <a class="naventry" href="#contacts">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="mainsec">
+            <div class="decor star-shape star-topleft"></div>
+            <div class="css-cloud-shape cloud-left"></div>
+            <img src="logo.jpg" alt="logo" id="logo" class="decor">
+            <div class="css-cloud-shape cloud-right"></div>
+            <div class="decor star-shape star-topright"></div>
+            <h1>The Narrator <br><span id="headingspan">Talking Club</span></h1>
+            <p id="description">We combine fun with language learning, providing a unique experience to foster new
+                relationships. Strengthen your speaking abilities and confidently hone existing skills — in both
+                individual
+                and
+                group lessons.</p>
+            <div class="decor star-shape star-bottomleft"></div>
+            <div id="buttons">
+                <a href="#services" id="B1">Explore Services</a>
+                <a href="#contacts" id="B2">Early Bird Sign Up✨</a>
+            </div>
+            <div class="decor star-shape star-bottomright"></div>
+        </section>
+    </main>
+    <section id="services">
+        <h2 class="yellowtitle">Our Services</h2>
+        <p id="servicep">Pick the course that suits your goals</p>
+
+        <div class="servicegrid">
+            <div class="servicebox">
+                <span class="dot"></span>
+                Interview Preparation
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                Conversational English
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                IELTS Speaking
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                English
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                Business English
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                Judicial English
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                Medical English
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                English Literature
+            </div>
+            <div class="servicebox">
+                <span class="dot"></span>
+                English Grammar
+            </div>
+        </div>
+    </section>
+    <section id="lessons">
+        <div id="rainbow"></div>
+        <h2 class="bluetitle">How We Teach</h2>
+        <div id="grid">
+            <div class="lessoncard individual">
+                <div class="individuallogo">
+                    <div class="cardicon">
+                        <p>👤</p>
+                    </div>
+                    <h3>Individual Lessons</h3>
+                </div>
+                <div class="lessoncontent">
+                    <p>Your learning objectives are the main focus of our one-on-one sessions. Benefit from structured
+                        lessons, personalized instructions, and the flexibility to practice at your preferred pace.</p>
+                    <ul>
+                        <li><span>✓</span> Personalized instruction</li>
+                        <li><span>✓</span> Flexible pace</li>
+                        <li><span>✓</span> Structured lessons</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="lessoncard group">
+                <div class="grouplogo">
+                    <div class="cardicon">
+                        <p>👥</p>
+                    </div>
+                    <h3>Group Lessons</h3>
+                </div>
+                <div class="lessoncontent">
+                    <p>Participate with others in engaging classes and foster creative collaboration. A perfect
+                        opportunity to learn how to talk with good confidence, put forth your thoughts, and have
+                        conversations in real-life situations.</p>
+                    <ul>
+                        <li><span class="group">✓</span> Creative collaboration</li>
+                        <li><span class="group">✓</span> Real-life conversation practice</li>
+                        <li><span class="group">✓</span> Build confidence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="referrals">
+        <div class="decor star-shape star-topleft"></div>
+        <h2 class="bluetitle"><span>🎉</span><br>Referral Program & Early Bird <br><span>Discount</span></h2>
+        <div class="decor star-shape star-topright"></div>
+        <p id="description">Share the club with your friends and both of you will enjoy a <span>10% discount</span> with
+            our referral program. Early sign-up via our official email helps you take advantage of our Early Bird
+            specials.</p>
+        <div id="grid">
+            <div class="info">
+                <div class="cardicon">
+                    <p>👫</p>
+                </div>
+                <p class="title">Refer a Friend</p>
+                <p class="msg">10% OFF</p>
+                <p class="detail">for both of you</p>
+            </div>
+            <div class="info">
+                <div class="cardicon">
+                    <p>⚡</p>
+                </div>
+                <p class="title">Early Bird</p>
+                <p class="msg org">Special Deal</p>
+                <p class="detail">sign up early via email</p>
+            </div>
+        </div>
+        <div class="decor star-shape star-bottomleft"></div>
+        <div class="decor star-shape star-bottomright"></div>
+    </section>
+    <section id="contacts">
+        <div id="rainbow"></div>
+        <h2 class="yellowtitle">Get In Touch</h2>
+        <p id="servicep">We'd love to hear from you. Reach out via our email or follow and DM us on Instagram!</p>
+        <div id="grid">
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=thenarratorhub.com@gmail.com" target="_blank"
+                class="contactbox">
+                <div class="cardicon">
+                    <p>✉️</p>
+                </div>
+                <p class="medium">Email Us</p>
+                <p class="detail">thenarratorhub.com@gmail.com</p>
+            </a>
+            <a href="https://www.instagram.com/thenarratorhub" target="_blank" class="contactbox instagram">
+                <div class="cardicon">
+                    <p>📸</p>
+                </div>
+                <p class="medium">Instagram</p>
+                <p class="detail">@thenarratorhub</p>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <div id="footnote">
+            <div class="branding">
+                <img src="logo.jpg" alt="logo">
+                <span class="foottitle">The Narrator Talking Club</span>
+            </div>
+            <span class="detail">©2026 The Narrator. All rights reserved.</span>
+        </div>
+    </footer>
+</body>
+
+</html>
